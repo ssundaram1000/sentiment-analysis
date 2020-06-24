@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './public/template/app.html'
 })
 export class AppComponent {
   title = 'aws-amplify-cognito-authentication';
+
+  constructor() {}
 }

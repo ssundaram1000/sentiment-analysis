@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v4.0.1">
+  <title>Confirm Registration</title>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+<body class="text-center">
+<form class="form-signin" method="POST" action="#" role="form">
+  <h1 class="h3 mb-3 font-weight-normal">Confirm Registration</h1>
+  <div *ngIf="errorMessage!=null" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <label for="inputUsername" class="sr-only">Username</label>
+  <input id="inputUsername" class="form-control" placeholder="Username"
+         required autofocus [(ngModel)]="username" [ngModelOptions]="{standalone: true}" >
+
+  <label for="inputConfirmationCode" class="sr-only">Confirmation Code</label>
+  <input type="lastone" id="inputConfirmationCode" class="form-control" placeholder="Confirmation Code" required
+          [(ngModel)]="confirmationCode" [ngModelOptions]="{standalone: true}">
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="onConfirmRegistration()">Confirm </button>
+  <hr>
+  <p>Can't find your code? <a [routerLink]="['/home/resendCode']" class="ally-green"> <i class="fa fa-fw fa-group"></i> Resend
+    Code</a>
+    <a [routerLink]="['/home/register']" class="ally-green"> <i class="fa fa-fw fa-group"></i> Register</a> <a
+      [routerLink]="['/home/login']" class="ally-green"> <i class="fa fa-fw fa-user"></i> Login</a>
+  </p>
+
+  <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+</form>
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v4.0.1">
+  <title>Account Registration</title>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+<body class="text-center">
+<form class="form-signin" method="POST" action="#" role="form">
+  <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
+  <label for="inputUsername" class="sr-only">Username</label>
+  <input id="inputUsername" class="form-control" placeholder="Username"
+         required autofocus [(ngModel)]="user.username" [ngModelOptions]="{standalone: true}" >
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required
+         type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
+
+  <label for="inputEmail" class="sr-only">E-mail</label>
+  <input id="inputEmail" class="form-control" placeholder="eMail address"
+         required type="email"  [(ngModel)]="user.attributes.email" [ngModelOptions]="{standalone: true}" >
+
+  <label for="inputName" class="sr-only">Name</label>
+  <input id="inputName" class="form-control" placeholder="Name" type="lastone"
+         [(ngModel)]="user.attributes.name" [ngModelOptions]="{standalone: true}" >
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="onRegister()">Register</button>
+  <hr>
+  <p>Don't have an account?
+    <a [routerLink]="['/home/register']">
+      <i class="fa fa-fw fa-group"></i>Register
+    </a><br><hr>
+  <a [routerLink]="['/home/forgotPassword']">
+    <i class="fa fa-fw fa-group"></i> Forgot Password?
+  </a><br/>
+  <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+</form>
+
+
+</body>
+</html>
