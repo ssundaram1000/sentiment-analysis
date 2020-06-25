@@ -29,7 +29,7 @@
 
 <form class="form-signin" method="POST" action="#" role="form">
   <div style="float: left">
-    <span class="my-title1">Enter your review</span>
+    <span class="my-title1">Enter your review v1</span>
   </div>
   <div style="float: right">
   <span *ngIf="reviewResult == '0'">
@@ -49,7 +49,7 @@
   </div>
 
 
-  <label for="inputReview" class="sr-only">Enter movie review v8</label>
+<!--  <label for="inputReview" class="sr-only">Enter movie review v8</label>-->
   <textarea id="inputReview" name="inputReview" rows="4" cols="300"
             class="form-control" placeholder=""
             required autofocus [(ngModel)]="reviewText" [ngModelOptions]="{standalone: true}"></textarea>
