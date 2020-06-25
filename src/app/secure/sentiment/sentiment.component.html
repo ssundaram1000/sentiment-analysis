@@ -29,9 +29,9 @@
 
 <form class="form-signin" method="POST" action="#" role="form">
   <div style="float: left">
-    <span class="my-title1">Enter your review here</span>
+    <span class="my-title1">Enter your review &nbsp;</span>
   </div>
-  <div style="float: right">
+  <div style="float: left">
   <span *ngIf="reviewResult == '0'">
     <svg class="bi bi-hand-thumbs-down" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
          xmlns="http://www.w3.org/2000/svg">
@@ -56,8 +56,9 @@
   <button class="btn btn-info" type="submit" (click)="onClear()">Clear Review</button>
   <button class="btn btn-primary" type="submit" (click)="onReviewSubmit()">Submit Review</button>
   <br/>
-  <a [routerLink]="['/securehome/home']">
-    <i class="fa fa-fw fa-group"></i> Home
+<!--  <button class="btn btn-md btn-primary btn-block" type="submit" (click)="onLogOut()">Sign out</button>-->
+  <a (click)="onLogOut()">
+    <i class="fa fa-fw fa-group"></i> Sign out
   </a>
   <br/>
   <p class="mt-5 mb-3 text-muted">&copy; 2017-2020 v{{version}}</p>

@@ -38,12 +38,12 @@ const homeRoutes: Routes = [
 const secureHomeRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/securehome',
+    redirectTo: '/securehome/sentiment',
     pathMatch: 'full'
   },
   {
     path: 'securehome', component: SecurehomeRootComponent, children: [
-      {path: '', component: SecurehomeLandingComponent},
+      {path: '', component: SentimentComponent},
       {path: 'home', component: SecurehomeLandingComponent},
       {path: 'sentiment', component: SentimentComponent}
       ]

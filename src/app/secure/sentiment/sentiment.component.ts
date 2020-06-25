@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
+import {Auth} from 'aws-amplify';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -13,7 +15,7 @@ export class SentimentComponent implements OnInit {
   reviewResult: string;
   version: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private router: Router, private http: HttpClient) {}
 
   ngOnInit(): void {
     this.version = environment.version;
@@ -36,5 +38,14 @@ export class SentimentComponent implements OnInit {
     this.reviewResult = '';
   }
 
+  onLogOut() {
+    Auth.signOut()
+      .then(data => {
+        console.log(data);
+        console.log('You are successfully logged out');
+        this.router.navigate(['/home/login']);
+      })
+      .catch(err => console.log(err));
+  }
 
 }
